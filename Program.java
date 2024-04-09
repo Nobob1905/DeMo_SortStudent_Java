@@ -5,5 +5,12 @@ public class Program {
         // 1. khoi tao danh sach sinh vien
         List<Student> list = StudentUtils.generate();
         StudentUtils.print(list);
+
+        StudentUtils.sortByName(list);
+        StudentUtils.print(list);
+
+        // 3. sort tang diem
+        StudentUtils.sortByAvg(list);
+        StudentUtils.print(list);
     }
 }
