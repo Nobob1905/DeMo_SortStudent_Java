@@ -12,5 +12,15 @@ public class Program {
         // 3. sort tang diem
         StudentUtils.sortByAvg(list);
         StudentUtils.print(list);
+     
+        // sort tuoi giam
+        StudentUtils.sortByAgeDescending(list);
+        StudentUtils.print(list);
+       
+        // @TODO: tinh diem trung binh toan bo in ra
+        System.out.println("Avg = " + StudentUtils.avg(list));
+       
+        // @TODO: lay ds ten hoc sinh gioi in ra
+        System.out.println(StudentUtils.goodStudentName(list));
     }
 }

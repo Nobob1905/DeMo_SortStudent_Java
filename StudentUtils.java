@@ -40,4 +40,39 @@ public class StudentUtils {
                 return 0;
             });
     }
+
+    public static void sortByAgeDescending(List<Student> list)
+    {
+        Collections.sort(list, (Student o1, Student o2) ->{
+            if(o1.age < o2.age) return 1;
+            if(o1.age > o2.age) return -1;
+            return 0;
+        });
+    }
+
+    /**
+     * @TODO
+     * su dung Stream API và map  tinh dtb
+     */
+    public static double avg(List<Student> list)
+    {   
+        // Stream<Student> o1 = list.stream();
+        return 
+            list.stream()
+            .mapToDouble(s -> s.average())
+            .summaryStatistics()
+            .getAverage();
+    }
+
+    /**
+     * @TODO
+     *  Stream API và filter, map lay danh sách TeN cac HSG
+     */
+    public static List<String> goodStudentName(List<Student> list)
+    {
+        return list.stream()
+                    .filter(s -> s.isGoodStudent())
+                    .map(s -> s.getName())
+                    .collect(Collectors.toList());
+    }
 }
